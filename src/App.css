@@ -40,3 +40,34 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Style pour l'en-tête */
+h1 {
+  background-color: #333; /* Fond sombre */
+  color: white; /* Texte blanc */
+  font-size: 2em; /* Texte plus grand */
+  font-weight: bold; /* Texte en gras */
+  padding: 20px; /* Espace autour du texte */
+  text-align: center; /* Centrer le texte */
+  margin: 0; /* Retirer les marges par défaut */
+  font-family: 'Arial', sans-serif; /* Police de caractères */
+
+}
+
+/* Style pour la liste des personnages */
+ul#characters {
+  list-style-type: none; /* Retirer les puces de la liste */
+  padding: 0; /* Retirer le padding de la liste */
+  margin: 0; /* Retirer la marge */
+}
+
+ul#characters li {
+  padding: 15px; /* Ajouter de l'espace autour de chaque élément de la liste */
+  border-bottom: 1px solid #ddd; /* Ajouter une bordure fine en bas de chaque élément */
+  font-size: 1.2em; /* Agrandir légèrement la taille de police */
+  font-family: 'Arial', sans-serif; /* Police de caractères */
+}
+
+ul#characters li:last-child {
+  border-bottom: none; /* Pas de bordure pour le dernier élément */
+}
