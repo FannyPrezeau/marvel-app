@@ -1,0 +1,27 @@
+[
+    {
+        "Nom": "Beast",
+        "Pouvoir":"Il est tout bleu",
+        "Age":"85 ans"
+    },
+    {
+        "Nom": "Captaine America",
+        "Pouvoir":"C'est un super combattant",
+        "Age":"Plus de 100 ans"
+    },
+    {
+        "Nom": "Deadpool",
+        "Pouvoir":"Il se regen à l'infini",
+        "Age":"30 ans"
+    },
+    {
+        "Nom": "Groot",
+        "Pouvoir":"Arbre",
+        "Age":"Inconnu"
+    },
+    {
+        "Nom": "Hulk",
+        "Pouvoir":"Il est tout vert",
+        "Age":"4 ans"
+    }
+]
