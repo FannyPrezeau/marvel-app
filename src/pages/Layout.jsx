@@ -15,7 +15,7 @@ const Layout = () => {
                 <Outlet />
             </main>
             <footer>
-                <p>Marvel App - 2023</p>
+                <p>Marvel App - 2024</p>
             </footer>
         </>
     );
