@@ -1,73 +1,91 @@
+/*
+  App.css
+  This file contains the styles for the App component.
+*/
+html, body {
+  height: 100%;  /* This is needed to make the footer stick to the bottom of the page */
+  margin: 0; /* Remove default margin */
+}
+
+body {
+  font-family: sans-serif;
+  padding: 0;
+}
+
+/* This is needed to make the footer stick to the bottom of the page */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* This is needed to make the footer stick to the bottom of the page */
+main {
+  flex: 1;
+}
+
+/* This is needed to make the footer stick to the bottom of the page */
+footer {
+  margin: 0;
+  padding: 20px;
+  background: #333;
+  color: #fff;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-/* Style pour l'en-tête */
 h1 {
-  background-color: #333; /* Fond sombre */
-  color: white; /* Texte blanc */
-  font-size: 2em; /* Texte plus grand */
-  font-weight: bold; /* Texte en gras */
-  padding: 20px; /* Espace autour du texte */
-  text-align: center; /* Centrer le texte */
-  margin: 0; /* Retirer les marges par défaut */
-  font-family: 'Arial', sans-serif; /* Police de caractères */
+  margin: 0;
+  padding: 20px;
+  background: #333;
+  color: #fff;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+footer {
+  margin: 0;
+  padding: 20px;
+  background: #333;
+  color: #fff;
+  text-align: center;
 
 }
 
-/* Style pour la liste des personnages */
-ul#characters {
-  list-style-type: none; /* Retirer les puces de la liste */
-  padding: 0; /* Retirer le padding de la liste */
-  margin: 0; /* Retirer la marge */
+/* Navigation */
+nav {
+  background: #444;
+  padding: 10px;
 }
 
-ul#characters li {
-  padding: 15px; /* Ajouter de l'espace autour de chaque élément de la liste */
-  border-bottom: 1px solid #ddd; /* Ajouter une bordure fine en bas de chaque élément */
-  font-size: 1.2em; /* Agrandir légèrement la taille de police */
-  font-family: 'Arial', sans-serif; /* Police de caractères */
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
 }
 
-ul#characters li:last-child {
-  border-bottom: none; /* Pas de bordure pour le dernier élément */
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.active {
+  color: salmon
 }
