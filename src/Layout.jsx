@@ -1,7 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 import { NavLink } from 'react-router-dom';
-
 const Layout = () => {
     return (
         <>
@@ -20,5 +19,4 @@ const Layout = () => {
         </>
     );
 };
-
 export default Layout;
