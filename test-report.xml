@@ -2,7 +2,7 @@
 <testExecutions version="1">
   <file path="C:\Users\fprezeau\marvel-app\src\api\character-api.test.js">
     <testCase name="Character API getCharacters should return the full list of characters" duration="2"/>
-    <testCase name="Character API getCharacterById should return the correct character for a given ID" duration="1"/>
+    <testCase name="Character API getCharacterById should return the correct character for a given ID" duration="0"/>
     <testCase name="Character API getCharacterById should return undefined for an invalid ID" duration="0"/>
   </file>
   <file path="C:\Users\fprezeau\marvel-app\src\components\NumberOfCharacters.test.js">
