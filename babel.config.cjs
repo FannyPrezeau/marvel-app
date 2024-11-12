@@ -4,4 +4,3 @@ module.exports = {
     ["@babel/plugin-transform-react-jsx", { "runtime": "automatic" }] // Transform JSX into React.createElement calls with automatic runtime import
   ]
 };
-  
