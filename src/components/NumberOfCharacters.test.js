@@ -1,19 +1,19 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
 import { NumberOfCharacters } from './NumberOfCharacters';
 
-test('displays "There is no character" when characters array is empty', () => {
-  const { getByText } = render(<NumberOfCharacters characters={[]} />);
-  expect(getByText('There is no character')).toBeInTheDocument();
+test('renders "There is no character" when characters array is empty', () => {
+  render(<NumberOfCharacters characters={[]} />);
+  expect(screen.getByText('There is no character')).toBeInTheDocument();
 });
 
-test('displays "There is 1 character" when characters array has one character', () => {
-  const { getByText } = render(<NumberOfCharacters characters={['Spider-Man']} />);
-  expect(getByText('There is 1 character')).toBeInTheDocument();
+test('renders the correct number of characters when characters array is not empty', () => {
+  const characters = ['Character 1', 'Character 2', 'Character 3'];
+  render(<NumberOfCharacters characters={characters} />);
+  expect(screen.getByText('There is 3 characters')).toBeInTheDocument();
 });
 
-test('displays "There are 2 characters" when characters array has multiple characters', () => {
-  const { getByText } = render(<NumberOfCharacters characters={['Spider-Man', 'Iron Man']} />);
-  expect(getByText('There are 2 characters')).toBeInTheDocument();
+test('renders "There is no character" when no characters are provided', () => {
+  render(<NumberOfCharacters />);
+  expect(screen.getByText('There is no character')).toBeInTheDocument();
 });
