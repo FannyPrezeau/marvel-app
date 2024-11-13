@@ -11,7 +11,7 @@ const ContactPage = () => {
       <h2>Contact Us</h2>
       <p>
         Feel free to contact us at 
-        <a href="mailto:marvelApp@gmail.com"> marvelApp@gmail.com</a>.
+        <a href="mailto:fanny.prezeau@etu.univ-poitiers.fr"> fanny.prezeau@etu.univ-poitiers.fr</a>.
       </p>
     </div>
   );

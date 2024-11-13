@@ -6,11 +6,9 @@ import CharacterDetail from '../components/CharacterDetail'; // Assurez-vous d'i
 
 const CharacterDetailPage = () => {
     const character = useLoaderData();
-
     return (
         <div>
-            <h2>{character.name}</h2>
-            <CharacterDetail character={character} />
+            {character ? <CharacterDetail character={character} /> :'Loading...'}
         </div>
     );
 };
