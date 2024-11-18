@@ -1,6 +1,8 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import { version } from '../package.json';
+
 const Layout = () => {
     return (
         <>
