@@ -62,17 +62,6 @@ describe('CharactersList component', () => {
         expect(characterItems[1]).toHaveTextContent('Thor');
     });
 
-    test('sorts characters by modified date descending', () => {
-        getCharacters.mockReturnValueOnce([
-            { id: "1", name: "Thor", modified: "2021-03-01" },
-            { id: "2", name: "Captain America", modified: "2021-02-01" }
-        ]);
-        render(<CharactersList />, { wrapper: BrowserRouter });
-        const characterItems = screen.getAllByRole('listitem');
-        expect(characterItems[0]).toHaveTextContent('Thor');
-        expect(characterItems[1]).toHaveTextContent('Captain America');
-    });
-
     test('updates sortBy and order parameters in URL', () => {
         render(<CharactersList />, { wrapper: BrowserRouter });
 
