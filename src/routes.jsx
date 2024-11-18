@@ -1,9 +1,10 @@
+// FILEPATH: /c:/Users/fprezeau/marvel-app/src/routes.jsx
+
 import { getCharacterById, getCharacters } from "./api/character-api";
 import Layout from "./Layout";
 import AboutPage from "./pages/AboutPage";
 import CharacterDetailPage from "./pages/CharacterDetailPage";
 import CharactersPage from "./pages/CharactersPage";
-
 import ContactPage from "./pages/ContactPage";
 
 const routes = [
@@ -14,7 +15,12 @@ const routes = [
             { 
                 path: "/", 
                 element: <CharactersPage />,
-                loader:() => getCharacters(),
+                loader: ({ request }) => {
+                    const url = new URL(request.url);
+                    const sortBy = url.searchParams.get('sortBy') || 'name';
+                    const order = url.searchParams.get('order') || 'asc';
+                    return getCharacters(sortBy, order);
+                },
             },
             {
                 path: "/characters/:id",
