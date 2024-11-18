@@ -1,7 +1,7 @@
 // FILEPATH: /c:/Users/fprezeau/marvel-app/src/components/CharactersList.test.jsx
 
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { CharactersList } from './CharactersList';
 import { BrowserRouter } from 'react-router-dom';
 import { getCharacters } from '../api/character-api';
@@ -71,5 +71,18 @@ describe('CharactersList component', () => {
         const characterItems = screen.getAllByRole('listitem');
         expect(characterItems[0]).toHaveTextContent('Thor');
         expect(characterItems[1]).toHaveTextContent('Captain America');
+    });
+
+    test('updates sortBy and order parameters in URL', () => {
+        render(<CharactersList />, { wrapper: BrowserRouter });
+
+        const sortBySelect = screen.getByLabelText('Sort by:');
+        const orderSelect = screen.getByLabelText('Order:');
+
+        fireEvent.change(sortBySelect, { target: { value: 'modified' } });
+        fireEvent.change(orderSelect, { target: { value: 'desc' } });
+
+        expect(window.location.search).toContain('sortBy=modified');
+        expect(window.location.search).toContain('order=desc');
     });
 });
