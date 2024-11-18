@@ -1,5 +1,5 @@
-import { getCharacterById, getCharacters } from "./api/characters-api";
-import Layout from "Layout";
+import { getCharacterById, getCharacters } from "./api/character-api";
+import Layout from "./Layout";
 import AboutPage from "./pages/AboutPage";
 import CharacterDetailPage from "./pages/CharacterDetailPage";
 import CharactersPage from "./pages/CharactersPage";
