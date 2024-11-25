@@ -9,7 +9,7 @@ import { getCharacters } from '../api/character-api';
 jest.mock('../api/character-api');
 
 const characters = [
-    {
+    { 
         id: "1",
         name: "Thor",
         modified: "2021-03-01"
