@@ -1,39 +1,41 @@
+// FILEPATH: /c:/Users/fprezeau/marvel-app/src/components/CharacterDetail.test.jsx
+
 import '@testing-library/jest-dom';
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import CharacterDetail from './CharacterDetail';
 
-test('renders the character detail correctly', () => {
-    const character = { 
-        name: 'Thor', description: 'God of Thunder', modified: '2014-01-13T14:48:32-0500',
-        thumbnail: { path: 'path/to/image', extension: 'jpg' },
-    };
-    render(<CharacterDetail character={character} />);
-    const nameElement = screen.getByText(character.name);
-    expect(nameElement).toBeInTheDocument();
+describe('CharacterDetail Component', () => {
+    test('renders "No character" when no character is provided', () => {
+        render(<CharacterDetail />);
+        expect(screen.getByText('No character')).toBeInTheDocument();
+    });
 
-    const descriptionElement = screen.getByText(character.description);
-    expect(descriptionElement).toBeInTheDocument();
+    test('renders character details when character is provided', () => {
+        const character = {
+            name: 'Iron Man',
+            description: 'A billionaire industrialist and genius inventor.',
+            modified: '2020-04-04T19:01:59-0400',
+            thumbnail: {
+                path: 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087',
+                extension: 'jpg',
+            },
+        };
+        render(<CharacterDetail character={character} />);
+        expect(screen.getByText('Iron Man')).toBeInTheDocument();
+        expect(screen.getByText('A billionaire industrialist and genius inventor.')).toBeInTheDocument();
+        expect(screen.getByAltText('Iron Man')).toHaveAttribute('src', 'http://i.annihil.us/u/prod/marvel/i/mg/3/50/537ba56d31087/standard_large.jpg');
+    });
 
-    const modifiedElement = screen.getByText(character.modified);
-    expect(modifiedElement).toBeInTheDocument();
-
-    const imageElement = screen.getByAltText(character.name);
-    expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute('src', 'path/to/image/standard_large.jpg');
-});
-
-
-test('does not render the character thumbnail image when not provided', () => {
-    const character = { 
-        name: 'Thor', description: 'God of Thunder', modified: '2014-01-13T14:48:32-0500',
-    };
-    render(<CharacterDetail character={character} />);
-    const imageElement = screen.queryByAltText(character.name);
-    expect(imageElement).not.toBeInTheDocument();
-});
-
-test('renders "no character" when character is not provided', () => {
-    render(<CharacterDetail />);
-    const noCharacterElement = screen.getByText('No character');
-    expect(noCharacterElement).toBeInTheDocument();
+    test('renders character details without thumbnail', () => {
+        const character = {
+            name: 'Iron Man',
+            description: 'A billionaire industrialist and genius inventor.',
+            modified: '2020-04-04T19:01:59-0400',
+        };
+        render(<CharacterDetail character={character} />);
+        expect(screen.getByText('Iron Man')).toBeInTheDocument();
+        expect(screen.getByText('A billionaire industrialist and genius inventor.')).toBeInTheDocument();
+        expect(screen.queryByAltText('Iron Man')).not.toBeInTheDocument();
+    });
 });
