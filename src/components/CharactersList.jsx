@@ -44,15 +44,25 @@ export function CharactersList() {
                 </label>
             </div>
             <ul id="characters">
-                {characters.map((character) => (
-                    <li key={character.id}>
-                        <h2>
-                            <Link to={`/characters/${character.id}`}>
-                                {character.name}
-                            </Link>
-                        </h2>
-                    </li>
-                ))}
+                {characters.map((character) => {
+                    const formattedDate = new Date(character.modified).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                    });
+                    return (
+                        <li key={character.id}>
+                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                <h2 style={{ marginRight: '10px' }}>
+                                    <Link to={`/characters/${character.id}`}>
+                                        {character.name}
+                                    </Link>
+                                </h2>
+                                <span>- {formattedDate}</span>
+                            </div>
+                        </li>
+                    );
+                })}
             </ul>
         </div>
     );
